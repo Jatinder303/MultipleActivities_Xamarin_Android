@@ -13,6 +13,7 @@ namespace MultipleActivities_Xamarin_Android
     {
         Button btnNext;
         TextView txtName;
+        TextView txtCourse;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -20,6 +21,7 @@ namespace MultipleActivities_Xamarin_Android
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
             txtName = FindViewById<TextView>(Resource.Id.txtName);
+            txtCourse = FindViewById<TextView>(Resource.Id.txtCourse);
             btnNext = FindViewById<Button>(Resource.Id.btnNext);
             btnNext.Click += OnNextButtonClick;
         }
@@ -29,7 +31,7 @@ namespace MultipleActivities_Xamarin_Android
 
            activity2.PutExtra("Name", txtName.Text);
            activity2.PutExtra("ID", 101);
-           activity2.PutExtra("Course", "Mobile Development ");
+           activity2.PutExtra("Course", txtCourse.Text);
 
           StartActivity(activity2);
 
